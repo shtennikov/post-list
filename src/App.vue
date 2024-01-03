@@ -13,4 +13,8 @@
 import BreadCrumbs from './components/BreadCrumbs.vue';
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+body {
+    background-color: $main-background;
+}
+</style>
