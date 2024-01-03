@@ -2,7 +2,7 @@
     <BreadCrumbs />
     <RouterView>
         <template #default="{ Component }">
-            <KeepAlive v-if="Component" :max="3">
+            <KeepAlive v-if="Component" :max="2" exclude="PagePost">
                 <component :is="Component" />
             </KeepAlive>
         </template>
