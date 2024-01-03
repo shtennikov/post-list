@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <main>
         Main Page
         <NavBar />
-    </div>
+    </main>
 </template>
 
 <script setup lang="ts">

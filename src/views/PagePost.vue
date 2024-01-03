@@ -1,5 +1,5 @@
 <template>
-    <div>Пост № {{ postId }}</div>
+    <main>Пост № {{ postId }}</main>
 </template>
 
 <script setup lang="ts">

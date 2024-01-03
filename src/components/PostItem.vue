@@ -1,8 +1,8 @@
 <template>
-    <div class="post-item">
+    <article class="post-item">
         <h3>{{ post.title }}</h3>
-        <article>{{ post.body }}</article>
-    </div>
+        <p>{{ post.body }}</p>
+    </article>
 </template>
 
 <script setup lang="ts">
