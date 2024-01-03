@@ -9,6 +9,6 @@
 <style scoped lang="scss">
 .container {
     margin: auto;
-    max-width: 1280px;
+    max-width: $content-width;
 }
 </style>
