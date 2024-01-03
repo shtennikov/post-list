@@ -1,12 +1,14 @@
 <template>
     <main>
-        Пост № {{ postId }}
-        <template v-if="post && author">
-            <PostItem :post="post" />
-            <AuthorInfo :author="author" />
-        </template>
-        <TheSpinner v-else-if="isLoading" />
-        <UiAlert v-else>{{ ALERT_TEXT }}</UiAlert>
+        <UiContainer>
+            Пост № {{ postId }}
+            <template v-if="post && author">
+                <PostItem :post="post" />
+                <AuthorInfo :author="author" />
+            </template>
+            <TheSpinner v-else-if="isLoading" />
+            <UiAlert v-else>{{ ALERT_TEXT }}</UiAlert>
+        </UiContainer>
     </main>
 </template>
 
@@ -16,6 +18,7 @@ import { usePostInfoFetch } from '../composables/usePostInfoFetch';
 import TheSpinner from '../components/TheSpinner.vue';
 import AuthorInfo from '../components/AuthorInfo.vue';
 import UiAlert from '../components/UiAlert.vue';
+import UiContainer from '@/components/UiContainer.vue';
 
 const ALERT_TEXT = 'Что-то пошло не так...';
 
