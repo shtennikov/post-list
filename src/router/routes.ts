@@ -16,7 +16,7 @@ export const routes = [
     {
         name: 'posts',
         path: '/posts',
-        component: () => import('../views/PagePosts.vue'),
+        component: () => import('../views/PagePostList.vue'),
         meta: {
             breadcrumbs: [BREADCRUMBS_ITEMS.index, BREADCRUMBS_ITEMS.posts],
         },
