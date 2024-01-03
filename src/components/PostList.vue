@@ -1,11 +1,11 @@
 <template>
-    <ul v-if="posts.length" class="post-list">
+    <TransitionGroup v-if="posts.length" class="post-list" name="list" tag="ul">
         <li v-for="(post, index) in posts" :key="post.id">
             <RouterLink :to="{ name: 'post', params: { postId: post.id } }">
                 <PostItem @click.right.prevent="$emit('delete-post', index)" :post="post" />
             </RouterLink>
         </li>
-    </ul>
+    </TransitionGroup>
     <UiAlert v-else>{{ ALERT_TEXT_EMPTY }}</UiAlert>
 </template>
 
@@ -25,7 +25,18 @@ defineEmits<{
 
 <style scoped>
 .post-list {
-    margin: auto;
-    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-enter-active,
+.list-leave-active {
+    transition: all 0.2s ease;
+}
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    transform: translateX(500px);
 }
 </style>
