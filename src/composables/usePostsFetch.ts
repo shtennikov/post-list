@@ -1,4 +1,4 @@
-import { ref, warn } from 'vue';
+import { ref } from 'vue';
 import { postRepository } from '../api/PostRepository';
 import type { Post } from '../types/Post.interface';
 
@@ -13,9 +13,9 @@ export function usePostsFetch() {
             posts.value = data;
             isLoading.value = false;
         })
-        .catch((err) => {
+        .catch((error) => {
             isError.value = true;
-            warn(err);
+            console.warn('Error fetching posts data:', error);
         });
 
     return {
