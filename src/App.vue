@@ -1,6 +1,12 @@
 <template>
     <BreadCrumbs />
-    <RouterView />
+    <RouterView>
+        <template #default="{ Component }">
+            <KeepAlive v-if="Component" :max="3">
+                <component :is="Component" />
+            </KeepAlive>
+        </template>
+    </RouterView>
 </template>
 
 <script setup lang="ts">
