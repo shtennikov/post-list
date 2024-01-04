@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import type { Post } from '../types/Post.interface';
 import PostItem from './PostItem.vue';
-import UiAlert from './UiAlert.vue';
+import { UiAlert } from './ui';
 
 const ALERT_TEXT_EMPTY = 'Список постов пуст';
 

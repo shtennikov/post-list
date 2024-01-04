@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import type { User } from '../types/User.interface';
-import UiIcon from './UiIcon.vue';
+import { UiIcon } from './ui';
 
 const props = defineProps<{ author: User }>();
 

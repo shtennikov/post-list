@@ -7,8 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import UiContainer from './UiContainer.vue';
-import UiNavBar from './UiNavBar.vue';
+import { UiContainer, UiNavBar } from './index';
 </script>
 
 <style scoped lang="scss">

@@ -4,9 +4,9 @@
 
 <script lang="ts">
 import { computed } from 'vue';
-import WebSite from '../assets/icons/website-icon.svg';
-import Phone from '../assets/icons/phone-icon.svg';
-import Email from '../assets/icons/email-icon.svg';
+import WebSite from '../../assets/icons/website-icon.svg';
+import Phone from '../../assets/icons/phone-icon.svg';
+import Email from '../../assets/icons/email-icon.svg';
 
 const ICONS = {
     website: WebSite,

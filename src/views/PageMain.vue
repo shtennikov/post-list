@@ -18,10 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import UiContainer from '../components/UiContainer.vue';
-import UiPageTitle from '../components/UiPageTitle.vue';
-import UiWelcomeSection from '../components/UiWelcomeSection.vue';
-import UiLink from '../components/UiLink.vue';
+import { UiContainer, UiPageTitle, UiWelcomeSection, UiLink } from '../components/ui';
 </script>
 
 <style scoped lang="scss"></style>

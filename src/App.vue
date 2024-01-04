@@ -15,8 +15,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import BreadCrumbs from './components/BreadCrumbs.vue';
-import UiHeader from './components/UiHeader.vue';
-import UiContainer from './components/UiContainer.vue';
+import { UiContainer, UiHeader } from './components/ui';
 
 const route = useRoute();
 </script>
