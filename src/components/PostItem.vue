@@ -2,6 +2,7 @@
     <article class="post-item">
         <h3 class="post-item__title">{{ post.title }}</h3>
         <p class="post-item__body">{{ post.body }}</p>
+        <slot name="author" />
     </article>
 </template>
 
