@@ -12,5 +12,6 @@ defineProps<{ tag: string; title?: string }>();
 .page-title {
     margin-bottom: 20px;
     text-align: center;
+    color: $text-title-color;
 }
 </style>

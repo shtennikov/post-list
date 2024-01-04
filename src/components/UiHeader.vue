@@ -13,6 +13,6 @@ import UiNavBar from './UiNavBar.vue';
 
 <style scoped lang="scss">
 .header {
-    padding: 20px 100px;
+    padding: 20px 0;
 }
 </style>
