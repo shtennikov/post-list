@@ -1,4 +1,5 @@
 <template>
+    <UiHeader />
     <BreadCrumbs />
     <RouterView>
         <template #default="{ Component }">
@@ -11,6 +12,7 @@
 
 <script setup lang="ts">
 import BreadCrumbs from './components/BreadCrumbs.vue';
+import UiHeader from './components/UiHeader.vue';
 </script>
 
 <style lang="scss">
