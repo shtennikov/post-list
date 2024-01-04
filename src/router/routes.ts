@@ -38,4 +38,9 @@ export const routes = [
             },
         },
     },
+    {
+        name: 'not-found',
+        path: '/:catchAll(.*)*',
+        component: () => import('../views/PageNotFound.vue'),
+    },
 ];

@@ -17,17 +17,25 @@
 </template>
 
 <script setup lang="ts">
+import { watch } from 'vue';
+import { useRouter } from 'vue-router';
 import PostItem from '../components/PostItem.vue';
-import { usePostInfoFetch } from '../composables/usePostInfoFetch';
 import AuthorInfo from '../components/AuthorInfo.vue';
-
+import { usePostInfoFetch } from '../composables/usePostInfoFetch';
 import { UiSpinner, UiAlert, UiContainer, UiPageTitle } from '../components/ui';
 
 const ALERT_TEXT = 'Что-то пошло не так...';
 
 const props = defineProps<{ postId: number }>();
+const router = useRouter();
 
-const { post, author, isLoading } = usePostInfoFetch(props.postId);
+const { post, author, isLoading, isNotFound } = usePostInfoFetch(props.postId);
+
+watch(isNotFound, () => {
+    if (isNotFound) {
+        router.push({ name: 'not-found' });
+    }
+});
 </script>
 
 <style scoped lang="scss">
