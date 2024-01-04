@@ -28,6 +28,7 @@ defineEmits<{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
 .list-enter-active,

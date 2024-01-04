@@ -1,12 +1,12 @@
 <template>
-    <main class="post-list-page">
-        <UiContainer>
-            <h3>Список постов</h3>
+    <UiContainer>
+        <main class="post-list-page">
+            <UiPageTitle tag="h2">Список постов</UiPageTitle>
             <PostList v-if="posts" :posts="posts" @delete-post="deletePost" />
             <TheSpinner v-else-if="isLoading" />
             <UiAlert v-else>{{ ALERT_TEXT }}</UiAlert>
-        </UiContainer>
-    </main>
+        </main>
+    </UiContainer>
 </template>
 
 <script setup lang="ts">
@@ -14,6 +14,7 @@ import PostList from '../components/PostList.vue';
 import UiAlert from '../components/UiAlert.vue';
 import TheSpinner from '../components/TheSpinner.vue';
 import UiContainer from '../components/UiContainer.vue';
+import UiPageTitle from '../components/UiPageTitle.vue';
 import { usePostsFetch } from '../composables/usePostsFetch';
 
 const ALERT_TEXT = 'Что-то пошло не так...';
@@ -25,4 +26,10 @@ const deletePost = (postIndex: number) => {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.post-list-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>
