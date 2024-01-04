@@ -1,9 +1,9 @@
-<!-- Breadcrumbs.vue -->
 <template>
     <nav class="breadcrumbs">
-        <span v-for="(crumb, index) in breadcrumbs" :key="index">
-            &gt;
-            <RouterLink :to="{ name: crumb.routeName }">{{ crumb.label }}</RouterLink>
+        <span v-for="(crumb, index) in breadcrumbs" :key="index" class="breadcrumbs__item">
+            <RouterLink :to="{ name: crumb.routeName }">
+                {{ crumb.label }}
+            </RouterLink>
         </span>
     </nav>
 </template>
@@ -36,15 +36,23 @@ const breadcrumbs = computed(() => {
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .breadcrumbs {
+    display: flex;
+    padding: 10px 0;
+    max-width: fit-content;
     font-size: 14px;
-    margin: 10px 0;
+    color: $accent-color;
+
+    &__item:not(:last-child):after {
+        padding: 0 5px;
+        content: '/';
+        color: $text-primary-color;
+    }
 }
 
 .router-link-exact-active {
-    color: #333;
-    text-decoration: none;
+    color: $text-primary-color;
     cursor: initial;
 }
 </style>
