@@ -1,10 +1,9 @@
 import type { RouteLocation } from 'vue-router';
-import type { Breadcrumbs } from '../types/Breadcrumbs.interface';
+import type { Breadcrumb } from '../types/Breadcrumbs.interface';
 
-const BREADCRUMBS_ITEMS: Record<string, Breadcrumbs> = {
-    index: { label: 'Главная', routeName: 'index' },
-    posts: { label: 'Список постов', routeName: 'posts' },
-    post: { label: 'Пост', routeName: 'post' },
+const BREADCRUMBS_ITEMS: Record<string, Breadcrumb> = {
+    index: { label: 'Главная', to: { name: 'index' } },
+    posts: { label: 'Список постов', to: { name: 'posts' } },
 } as const;
 
 export const routes = [
@@ -29,7 +28,14 @@ export const routes = [
             postId: Number(to.params.postId),
         }),
         meta: {
-            breadcrumbs: [BREADCRUMBS_ITEMS.index, BREADCRUMBS_ITEMS.posts, BREADCRUMBS_ITEMS.post],
+            breadcrumbs: (to: RouteLocation) => {
+                const { postId } = to.params;
+                const postBreadcrumb: Breadcrumb = {
+                    label: `Пост #${postId}`,
+                    to: { name: 'post', params: { postId } },
+                };
+                return [BREADCRUMBS_ITEMS.index, BREADCRUMBS_ITEMS.posts, postBreadcrumb];
+            },
         },
     },
 ];

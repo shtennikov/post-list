@@ -1,4 +1,6 @@
-export interface Breadcrumbs {
+import type { RouteLocationRaw } from 'vue-router';
+
+export interface Breadcrumb {
     label: string;
-    routeName: string;
+    to: RouteLocationRaw;
 }
